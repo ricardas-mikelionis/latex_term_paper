@@ -23,7 +23,7 @@
 \titleineng{TMMi model based mobile application testing.}
 \status{3 kurso 4 grupės studentas}
 \author{Ričardas Mikelionis}
-\supervisor{dr. Vytautas Valaitis}
+\supervisor{Lekt. dr. Vytautas Valaitis}
 \date{Vilnius – \the\year}
 
 % Nustatymai
@@ -42,9 +42,9 @@
 \sectionnonum{Įvadas}
 Nuo 2007, kai buvo pristatytas pirmasis iPhone jau praėjo kiek daugiau nei dešimt metų. Šio mobiliojo įrenginio, išmaniojo telefono (angl. Smartphone), pristatymas sukrėtė ir iš esmės pakeitė mobiliųjų kompiuterių rinką. Iki tol asmeniniai skaitmeniai asistentai (angl. PDA personal digital asistant) buvo nei prieinami, nei labai naudingi įprastam vartotojui, todėl juos turėjo keletas verslo pasaulio žmonių, o paprastas vartotojas su savimi nešiojosi krūvą skirtingą funkcionalumą atliekančių prietaisų: MP3 grotuvų, Fotoaparatų, nešiojamųjų kompiuterių, telefonų. iPhone žadėjo delne telpantį kompiuterį kiekvienam už prieinamą kainą, ir savo pažadą įvykdė. Vienas po kito ėmė rastis  mobiliosios operacinės sistemos, turėjusios tiesiogiai konkuruoti su iPhone naudojama iOS,  kaip PalmOS, Symbian, Windows 7 mobile, vėliau tapusi 8 ir 8.1 bei Android. Mobiliųjų kompiuterių bei telefonų rinką apėmė ir užplūdo krūvos prieinamų įrenginių, kurie su kiekviena nauja laida savo skaičiavimo sugebėjimais artėja arčiau ir arčiau to ką gali atlikti staliniai kompiuteriai, ir iš pažiūros 2017 metų išmanusis įrenginys savo specifikacijomis „ant popieriaus“ jau seniai pranoko 2007 metų kompiuterį.
 
-Nors šiandien iš gausauss operacinių sistemų pasirinkimo rinkoje iš esmės išlikę tik dvi: iOS ir Android, tačiau  išmaniųjų prietaisų populiarumas toli gražu neblėsta. 2016 metais pasaulyje jau buvo apie 2.1 mlrd. išmaniųjų telefonų naudotojų, o iki 2020 planuojama, jog šis skaičius sieks 2.87 mlrd.\cite {statista.com}. Esant didžulei įrenginių paklausai proporcingai kyla poreikis ir programinei įrangai pritaikytai šiems įrenginiams - mobiliosioms programoms.
+Nors šiandien iš gausaus operacinių sistemų pasirinkimo rinkoje iš esmės išlikę tik dvi: iOS ir Android, tačiau  išmaniųjų prietaisų populiarumas toli gražu neblėsta. 2016 metais pasaulyje jau buvo apie 2.1 mlrd. išmaniųjų telefonų naudotojų, o iki 2020 planuojama, jog šis skaičius sieks 2.87 mlrd.\cite {statista.com}. Esant didžulei įrenginių paklausai proporcingai kyla poreikis ir programinei įrangai pritaikytai šiems įrenginiams - mobiliosioms programoms.
 
-Šio darbu siekiama pateikti esminius skirtumus tarp įprastų darbastalio (angl. desktop) bei internetinių (angl. Web) programų ir mobiliųjų programų skirtų išmaniesiems įrenginiams kokybės užtikrinimo. Šio darbo tikslas - išanalizavus dabar rinkoje esančius mobiliųjų programų kokybės užtikrinimo įrankius, išskirti problemines mobiliųjų programų kokybės užtikrinimo sritis.
+Šio darbu siekiama pateikti esminius skirtumus tarp įprastų darbastalio (angl. desktop) bei internetinių (angl. Web) programų ir mobiliųjų programų skirtų išmaniesiems įrenginiams kokybės užtikrinimo. Šio darbo tikslas - išanalizavus dabartinės rinkos mobiliųjų programų kūrimo procesų tendencijas, išskirti problemines mobiliųjų programų kokybės užtikrinimo sritis bei pateikti keletą probleminių sričių kokybės užtikrinimo sprendimų remiantis testų brandos modeliu.
 
 
 
@@ -54,8 +54,47 @@ Nors šiandien iš gausauss operacinių sistemų pasirinkimo rinkoje iš esmės 
 
 Į mobiliųjų programų kūrimą vis dar žiūrima taip pat, kaip į interneto programų (angl. WEB application) ar darbastalio programų kūrimą, neįžvelgiant esminių skirtumų tarp šių dviejų programinės įrangos kūrimo procesų. Didžiulė įrenginių variacijų gausa, ir iš esmės išsiskiriantys naudojimosi mobiliąja programine įranga įpročiai turėtų versti kūrėjus į mobiliųjų programų kūrimą žvelgti kitaip.
 
-\subsection{Mobiliųjų programų kūrimo proceso skirtumai.}
-M. Satyanarayanan dar 1996-aisiais savo straipsnyje apie mobiliuosius kompiuterius puikiai aibrėžė esmines sritis, kurios išskiria mobiliuosius įrenginius nuo stacionariųjų. Išskirtos keturios sritys: riboti skaičiavimo ištekliai (angl. limited computing resources), apsauga ir pažeidžiamumas, galia (angl. performance) ir patikimumas bei riboti energijos ištekliai. \cite{Satyanarayanan:1996:FCM:248052.248053} Remiantis šiomis išskirtinumo sritimis galima pradėti išskirti esmines problemines sritis, į kurias derėtų atkreipti dėmesį kuriant bei testuojant programinę įrangą skirtą mobiliesiems įrenginiams.
+\subsection{Mobiliųjų programų kūrimo proceso probleminės sritys.}
+M. Satyanarayanan dar 1996-aisiais savo straipsnyje apie mobiliuosius kompiuterius puikiai aibrėžė esmines sritis, kurios išskiria mobiliuosius įrenginius nuo stacionariųjų. Išskirtos keturios sritys: riboti skaičiavimo ištekliai (angl. limited computing resources), apsauga ir pažeidžiamumas, galia (angl. performance) ir patikimumas bei riboti energijos ištekliai. \cite{Satyanarayanan:1996:FCM:248052.248053}
+
+Iš esmės mobiliosios programos yra tokia programinė įranga, kuri veikia nešiojamame (mobiliame) įrenginyje. Tačiau į mobiliąją kompiuteriją žvelgiant per išmaniųjų telefonų prizmę mobiliųjų programų apibrėžimą galime sukonkretinti. Mobilioji programa (angl. mobile app) - programa suprojektuota veikti išmaniąjame telefone, planšetiniame kompiuteryje ar kitame mobiliame įrenginyje ir/arba, kaip įvestį, priimanti situacija paremtą (angl. context based) informaciją pvz. GPS signalas. \cite{6496451} Situacijos supratimas, naujimasis situacine informacija ir gabėjimas keisti savo veikimą yra dar vienas esminis mobiliųjų programų, ypač skirtų išmaniesiems telefonams, skiriamasis bruožas.
+
+Remiantis šiais keturiais techniniais išskirtinumo bruožais, ir esminiu veikimo skirtumu galima pradėti išskirti problemines kokybės užtikrinimo sritis mobiliųjų programų kūrime. Laikant progamas išmaniesiems telefonams tyrimo baziniu objektu išskiriamos šios sritys: ryšio sujungiamumo, ribotų išteklių, draugiškumo vartotojui, situacinio prisitaikymo, įrenginių gausos, naujų operacinių sistemų versijų bei liečiamųjų ekranų.
+
+\subsubsection{Ryšio sujungiamumo probleminė sritis}
+Sugebėjimas prisijungti prie mobiliojo ryšio stočių bei bevielio interneto taškų dažnai mobiliajai programai yra kritinis reikalavimas, be kurio ši nesugebės funcionuoti. Problema kyla dėl ryšio nepastovumo keliaujant. Keliaujant didelius atstumus vyksta persijungimai tarp mobilaus ryšio stotelių, vartotojas gali pakliūti į neryšio zoną, ar vietą kurioje veikia viso labo GPRS ar EDGE ryšys. Taip pat ir su bevielio interneto stotelėsmis, kurių dažna veikia vos 100m. spinduliu nesant jokiems trukdžiams. 
+
+Testuojant šioje srityje derėtų atsižvelgti į jau egzistuojančius ryšio defektus esančius specifiniame testavimui naudojamame įrenginyje, ar operacinėje sistemoje. \cite{android_bugs} Testuojant programas kurios smarkiai remiasi į įrenginio sugebėjimą prisijungti prie interneto ar mobiliojo ryšio tinklų atsiranda poreikis atlikti funkcinius testus įvairuose ryšio sujungiamumo scenarijuose. Pagrindinis siekis yra užtikrinti teisingą programos veikimą, net dingus ryšiui ar šiam staiga smarkiai sulėtėjus.
+
+\subsubsection{Ribotų išteklių probleminė sritis}
+Kol mobilieji įrenginiai tampa vis galinesni ir galingesni, jie vis dar negali pasivyti satcionariųjų bei nešiojamųjų kompiuterių. Pavyzdžiui vienas iš galingesnių šiuo metu rinkoje esančių telefonų, Samsung Galaxy s8+ turi 6GB atminties bei 8 branduolių, palaikančių 8 gijas, sistemą mikroschemoje (angl. system on a chip) į kurią integruoti vaizdo procesorius bei pagrindinis procesoriai. \cite{samsung_s8} Šiuo metu didžioji dauguma vartotojams prieinamų motininių plokščių kompiuteriams palaiko iki 64GB atminties, o intel neseniai atskleidė savo naujosios kartos i9 procesorių liniją, kur aukščiausios klasės procesorius sudarytas iš 18 branduolių bei 36 gijų. \cite{intel_i9}
+
+Testuojant šioje srityje būtina atsižvelgti į išteklių įrenginyje naudojimą paleidžiant bei naudojant programą. Tai daroma siekiant išvengti staigių našumo sumažėjimų, neteisingo, nenumatyto programos ar įrenginio veikimo staiga imant naudoti 100\% prieinamų išteklių. Pagrindinis testavimo siekis užtikrinti teisingą programos bei įrenginio veikimą esant skaičiavimo išteklių trūkumui.
+
+\subsubsection{Draugiškumo vartotojui probleminė sritis}
+Kūrėjai kuriantys programas mobiliosioms operacinėms sistemos (Android, iOS) privalo sekti operacinių sistemų kūrėjo nusatytas varotojų sąsajos gaires. Dėl įrenginių gausos, skirtingų dydžių bei raiškos ekranų atsiranda grafinių neatitikimų tikimybė. 
+
+Testuojant šioje srityje būtina testavimą atlikti ant daug skirtingų įrenginių, veikiančių su skirtingomis operacinės sistemos versijomis bei skirtingų raiškų bei dydžių ekranais.
+
+\subsubsection{Situacinio prisitaikymo probleminė sritis}
+Didelė dalis mobiliųjų programų remiasi duomenimis gautais priklausomai nuo situacijos, iš įvairių sensorių išmaniajame įrenginyje. Dažnai išmanieji įrenginiai turi įvairių sensorių, kaip, mikrofonai, šviesos jutikliai, akselerometrai bei giroskopai, vaizdo kameros. Tokie įrenginiai turi ir keletą būdų komunikuoti, susijunti su kitais prietaisais, internetu: bluetooth, wifi, 4G/LTE, NFC. Visi šie sensoriai gali suteikti prigramai krūvą informacijos realiu laiku, atsižvelgiant į tai ką vartotojas veikia su įrenginiu, ar kur jis tuo metu yra.
+
+Testuojant šioje srityje patikrinti visų įrenginių ir įvesčių kombinacijų praktiškai neįmanoma. Todėl testus reikia skirstyti į kontekstinius (angl. context-specific), bei nusistatyti užtektinus testų padengtumo kriterijus. Kuriant kontekstu paremtus testus, bei renkantis įrenginius su kuriais bus vykdomi testavimo atvejai verta atsižvelgti į konkrečiam įrenginiui būdingus ar operacinės sistemos versijai būdingus defektus. \cite{android_bugs}
+
+\subsubsection{Įrenginių gausos probleminė sritis}
+Rinkoje, vartotojams prieinami šimtai skirtingų mobiliųjų įrenginių iš skirtingų gamintojų, veikiančių su skirtingomis operacinėmis sistemomis, surinktų iš skirtingų komponentų. 2013 metais atlikto tyrimo metu buvo suskaičiuota, jog rinkoje yra apie 1800 unikalių vien Android operacine sistema paremtų įrenginių modelių. \cite{Muccini:2012:STM:2663608.2663615}
+
+Testuojant šioje srityje reikia stengtis maksimizuoti testų padengtumą minimizuojant naudojamų įrenginių kiekį. Tą galima daryti grupuojant įrenginius, ir testuojant ne konkrečiuose įrenginiuose (mažiau įrenginių) tačiau grupėse. Pavyzdžiui:
+
+Pirmoji grupė, žemiausio prioriteto testai, silpni, palyginus su dabartiniais pagrindinių gamintojų flagmanais, turintys silpnesnius procesorius, mažiau atminties, žemesnės raiškos ekranus. Paremti senesne operacinės sistemos versija, veikiantys su senesne naršykle. Dar vis populiarūs, tačiau gamintojo jau nebepalaikomi įrenginiai.
+
+Antroji grupė, vidutinio prioriteto testai, vidutinio galingumo įrenginiai, dažniausiai kelių iteracijų, palyginius su dabartiniais pagrindinių išmaniųjų įrenginių gamintojų flagmanais, senumo pvz: iPhone 5s palyginus su iPhone 7. Jau gan seni, 3-2 metai, tačiau dar vis gamintojo palaikomi įrenginiai.
+
+Trečioji grupė, patys naujausi <1 metų senumo įrenginiai. Paremti naujausia operacinės sistemos versija, naujausios kartos komponentais, turintys daugiau atminties, aukštesnės raiškos ekranus, nei praeitos iteracijos modeliai.\cite{6496451}
+
+Testuojant pasirinkta įrenginių kombinacija įgalina keletą pasirinkimų, kaip tokį testavimą galima vykdyti: rankinis testavimas arba automatinis testavimas, komandos įmonėje arba žmonės pasamdyti iš kitų įmonių, testavimas pagal planą arba tiriamasis testavimas (angl. exploratory testing) bei emuliatorių, virtualių mašinų naudojimas arba testavimas ant realių, fizinių įrenginių
+
+\subsubsection{Naujų operacinių sistemų probleminė sritis}
 
 \subsubsection{Skirsnis}
 \subsubsubsection{Straipsnis}
