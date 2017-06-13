@@ -48,7 +48,7 @@ Nors šiandien iš gausaus operacinių sistemų pasirinkimo rinkoje iš esmės i
 
 
 
-\section{Mobiliųjų programų kokybė.}
+\section{Mobiliųjų programų kokybės užtikrinimas.}
 
 2013 metais atliktas tyrimas \cite {compuware.com} rodo, jog 79\% išmaniųjų telefonų naudotojų išbando atsisiųstą programėlę tik kartą prieš ištrindami. Didelė to priežastis yra žemesnė mobiliųjų programų kokybė palyginus su tuo ką vartotojai yra įpratę matyti savo naršyklėse, ar darbastalio programose. Išmaniųjų telefonų naudotojai yra pratę prie nemokamos ar žymiai mažiau kainuojančios programinės įrangos, kuri gauna nuolatinius atnaujinimus. (Pvz.: Adobe photoshop express iOS 0eur., Adobe Photoshop Windows 10 290eur./m. \cite{adobe.com}). Kyla kainų dilema: norint palaikyti žemas kainas rinkoje reikia mažinti kainas ir kūrimo procese. Tai dažnai daroma taupant laiką, kur ir nukenčia kokybės užtikrinimo procesai.
 
@@ -95,10 +95,18 @@ Trečioji grupė, patys naujausi <1 metų senumo įrenginiai. Paremti naujausia 
 Testuojant pasirinkta įrenginių kombinacija įgalina keletą pasirinkimų, kaip tokį testavimą galima vykdyti: rankinis testavimas arba automatinis testavimas, komandos įmonėje arba žmonės pasamdyti iš kitų įmonių, testavimas pagal planą arba tiriamasis testavimas (angl. exploratory testing) bei emuliatorių, virtualių mašinų naudojimas arba testavimas ant realių, fizinių įrenginių
 
 \subsubsection{Naujų operacinių sistemų probleminė sritis}
+Mobiliosios operacinės sistemos, palyginus su operacinėmis sistemomis stacionariesiems kompiuteriams, yra išleidžiamos labai dažnai. Pastaruoju metu tiek iOS tiek Android nauja „numeruotoji“ versija yra išleidžiama kas met. Taip dažnai išleidžiant naują operacinės sistemos iteraciją gali kilti daugybė nesuderinamumo defektų, turint omenyje tai, kad ne visos versijos yra palaikomos, t.y. naujesnės programų versijos gali veikti tik su keliomis paskutinėmis operacinės sistemos iteracijomis.
 
-\subsubsection{Skirsnis}
-\subsubsubsection{Straipsnis}
-\subsubsection{Skirsnis}
+Testuojant programas reikėtų atsižvelgti į egzistuojančius konkrečios operacinės sistemos versijos defektus, bei testuoti naudojant keletą skirtingų tos pat operacinės sistemos iteracijų. Taip siekiant įsitiktinti, ar defektai atsiradę mobiliojoje programoje buvo sukelti operacinės sistemos defekto, ar blogo kodo.
+
+\subsubsection{Liečiamųjų ekranų probleminė sritis}
+Liečiamieji ekranai yra pagrindinis, ir dažniausiai vienintelis įvesties pateikimo būdas mobiliuosiuose įrenginiuose. Dažna problema, ypač senesniuose įrenginiuose, yra lėtas atsakas, ar ekrano įvesties atsako sulėtėjimas naudojantis sudėtingesnėmis programomis.
+
+Testuojant reikėtų naudoti daug skirtingų įrenginių, kurie iš esmės skiriasi savo specifikacijomis, ypač ekranų dydžiu, raiška. Pagrindinis testavimo objektas yra resursų pasiskirstymas. Tikrinama ar testuojama programinė įranga mobilajame įrenginyje „neryja“ resursų. Reikėtų stengtis įvykdyti didelės apkrovos scenarijų, kai programinė įranga veikia pilnu pajėgumu atlikdama didžiausių skaičiavimų reikalaujančias užduotis, ir tikrinti mobiliojo įrenginio atsako laiką.
+
+\subsection{Integracinis testų brandos modelis - TMMi}
+
+
 \section{Skyrius}
 \subsection{Poskyris}
 \subsection{Poskyris}
