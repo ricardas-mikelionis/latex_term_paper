@@ -59,7 +59,16 @@ M. Satyanarayanan dar 1996-aisiais savo straipsnyje apie mobiliuosius kompiuteri
 
 Iš esmės mobiliosios programos yra tokia programinė įranga, kuri veikia nešiojamame (mobiliame) įrenginyje. Tačiau į mobiliąją kompiuteriją žvelgiant per išmaniųjų telefonų prizmę mobiliųjų programų apibrėžimą galime sukonkretinti. Mobilioji programa (angl. mobile app) - programa suprojektuota veikti išmaniąjame telefone, planšetiniame kompiuteryje ar kitame mobiliame įrenginyje ir/arba, kaip įvestį, priimanti situacija paremtą (angl. context based) informaciją pvz. GPS signalas. \cite{6496451} Situacijos supratimas, naujimasis situacine informacija ir gabėjimas keisti savo veikimą yra dar vienas esminis mobiliųjų programų, ypač skirtų išmaniesiems telefonams, skiriamasis bruožas.
 
-Remiantis šiais keturiais techniniais išskirtinumo bruožais, ir esminiu veikimo skirtumu galima pradėti išskirti problemines kokybės užtikrinimo sritis mobiliųjų programų kūrime. Laikant progamas išmaniesiems telefonams tyrimo baziniu objektu išskiriamos šios sritys: ryšio sujungiamumo, ribotų išteklių, draugiškumo vartotojui, situacinio prisitaikymo, įrenginių gausos, naujų operacinių sistemų versijų bei liečiamųjų ekranų.
+Remiantis šiais keturiais techniniais išskirtinumo bruožais, ir esminiu veikimo skirtumu galima pradėti išskirti problemines kokybės užtikrinimo sritis mobiliųjų programų kūrime. Laikant progamas išmaniesiems telefonams tyrimo baziniu objektu išskiriamos šios sritys:
+\begin{itemize}
+  \item  Ryšio sujungiamumo
+  \item Ribotų išteklių
+  \item Draugiškumo vartotojui
+  \item Situacinio prisitaikymo
+  \item Įrenginių gausos
+  \item Naujų operacinių sistemų versijų
+  \item Liečiamųjų ekranų
+\end{itemize}
 
 \subsubsection{Ryšio sujungiamumo probleminė sritis}
 Sugebėjimas prisijungti prie mobiliojo ryšio stočių bei bevielio interneto taškų dažnai mobiliajai programai yra kritinis reikalavimas, be kurio ši nesugebės funcionuoti. Problema kyla dėl ryšio nepastovumo keliaujant. Keliaujant didelius atstumus vyksta persijungimai tarp mobilaus ryšio stotelių, vartotojas gali pakliūti į neryšio zoną, ar vietą kurioje veikia viso labo GPRS ar EDGE ryšys. Taip pat ir su bevielio interneto stotelėsmis, kurių dažna veikia vos 100m. spinduliu nesant jokiems trukdžiams. 
@@ -100,15 +109,50 @@ Mobiliosios operacinės sistemos, palyginus su operacinėmis sistemomis staciona
 Testuojant programas reikėtų atsižvelgti į egzistuojančius konkrečios operacinės sistemos versijos defektus, bei testuoti naudojant keletą skirtingų tos pat operacinės sistemos iteracijų. Taip siekiant įsitiktinti, ar defektai atsiradę mobiliojoje programoje buvo sukelti operacinės sistemos defekto, ar blogo kodo.
 
 \subsubsection{Liečiamųjų ekranų probleminė sritis}
-Liečiamieji ekranai yra pagrindinis, ir dažniausiai vienintelis įvesties pateikimo būdas mobiliuosiuose įrenginiuose. Dažna problema, ypač senesniuose įrenginiuose, yra lėtas atsakas, ar ekrano įvesties atsako sulėtėjimas naudojantis sudėtingesnėmis programomis.
+Liečiamieji ekranai yra pagrindinis, ir dažniausiai vienintelis įvesties pateikimo būdas mobiliuosiuose įrenginiuose. Dažna problema, ypač senesniuose įrenginiuose, yra lėtas prisilietimo prie ekrano atsakas, ar ekrano įvesties atsako laiko padidėjimas imant naudotis sudėtingesnėmis programomis.
 
 Testuojant reikėtų naudoti daug skirtingų įrenginių, kurie iš esmės skiriasi savo specifikacijomis, ypač ekranų dydžiu, raiška. Pagrindinis testavimo objektas yra resursų pasiskirstymas. Tikrinama ar testuojama programinė įranga mobilajame įrenginyje „neryja“ resursų. Reikėtų stengtis įvykdyti didelės apkrovos scenarijų, kai programinė įranga veikia pilnu pajėgumu atlikdama didžiausių skaičiavimų reikalaujančias užduotis, ir tikrinti mobiliojo įrenginio atsako laiką.
 
 \subsection{Integracinis testų brandos modelis - TMMi}
+Testų brandos modelis buvo sukurtas, tam, kad įvairios organizacijos galėtų įvertinti bei įvertinę pagerinti savo testavimo procesus. Tai taip pat teikia naudą, kaip modelis, tiesiogine to žodžio prasme, kuris nurodo, kaip testavimo procesas turėtų  palaipsniui gerėti savo efektyvumu bei kokybe. \cite{Burnstein:2010:PST:1965566} Žinoma, jog TMMi nėra vienintelis procesų vertinimo bei gerinimo modelis ar standartas, per paskutiniuosius du dešimtmečius buvo sukurti ne vienas toks standartas. Vienas iš jų yra CMM - Gebėjimo Brandos Modelis (angl. Capability Maturity Model) bei jo įpėdinis Integruotas Gebėjimo Brandos Modelis (angl. Capablitiy Maturity Model Integration - CMMi). Tačiau palyginus su TMM bei TMMi daugelis šių modelių neskiria pakankamai dėmesio testavimo procesų gerinimui. 
+
+TMMi modelis sudarytas iš penkių brandos lygių, kurie kiekvienas rodo testavimo proceso brandos būseną. Šie modelio nustatyti lygiai padeda struktūrizuotai siekti aukštesnio proceso našumo, taigi jų reikia siekti iš eilės t.y. negalima iš antro brandos lygio iš karto pasiekti ketvirtojo ar penktojo. Taip pat struktūrizuotas išskirstymas lygiais užtikrina, jog pasiekus aukštesnyjį lygį žemesniajame lygyje pradėtos naudoti praktikos bus naudojamos ir toliau.
+
+Kiekvienam testų brandos lygiui pasiekti užsibrėžiamos veiklos, užduotys bei pareigos (angl. Activities, Tasks, Responsibilities - ATR). Šie trys kriterijai nurodo esmines sritis kurios turi būti įtrauktos į testavimo procesą, tam, kad būtų pasiektas norimas brandos lygis. Šie brandos tiksliai turi tapti siekiamybe visiems kūrimo procese dalyvaujantiems žmonėms, ne tik kokybės užtikrinimo srities specialistams. Taip užtikrinimas visapusiškas testavimo proceso palaikymas bei įvertinimas siekiant pagerėjimo.
+
+Testų brandos lygis nustatomas naudojantis TMMi įvertinimo modeliu (angl. TMMi assessment model) sudatyto iš trijų komponentų.
+\begin{itemize}
+   \item Klausimyno, susijusio su brandos tikslų siekimu. Skirt nustatyti dabartinę testavimo proceso būsesną.
+   \item Gairių rinkino skirto įvertinimo komandai.
+   \item Įvertinimo procedūra išdėstyta pažingsniui, skirta vesti įvertinimo komandą per testų procesų įvertinimą bei gerinimą.
+\end{itemize}
+
+\subsubsection{Testų Brandos Modelio testų brandos lygiai}
+Testų brandos modelį apibrėžia penki brandos lygiai\cite{Burnstein:2010:PST:1965566}:
+\begin{enumerate}
+   \item Pradinis (angl. Initial)
+   \item Fazių aiprėžimo (angl. Phase definition)
+   \item Integracijos (angl. Integration)
+   \item Valdymo bei vertinimo (angl. Management and Measurement)
+   \item Optimizacijos arba Defektų prevencijos bei kokybės valdymo (angl. Optimisation/Defect Prevention and Quality Control)
+\end{enumerate}
+Kiekvienas iš šių lygių turi ir vidinę struktūra pavaizduota priede nr. 1. Pirmasis brandos lygis savo struktūros neturi, nes tiesiog nurodo bazinio proceso egzistavimą, o jo pasiekimui užtenka chaotiško proceso. Kiekvieno brandos lygio brandos tikslai atspingi testavimo proceso pagerinimo tikslus kuriuos reikia įvykdyti norint pasiekti norimą brandos lygį. Taip pat norint pasiekti aukštesnį lygį būtina įgyvendinti ir visus tikslus reikalingus pasiekti žemesnius lygius tam, kad nevyktų regresija ir tikrai būtų pasiektas testavimo proceso pagerinimas.
+
+\subsubsubsection{Pirmasis brandos lygis}
+
+\subsubsubsection{Antrasis brandos lygis}
+
+\subsubsubsection{Trečiasis brandos lygis}
+
+\subsubsubsection{Ketvirtasis brandos lygis}
+
+\subsubsubsection{Penktasis brandos lygis}
+
+\subsubsection{Testų Brandos Modelis TMMi bei Gebėjimo Brandos Modelis CMMi}
 
 
-\section{Skyrius}
-\subsection{Poskyris}
+\section{Agile metodologijos mobiliųjų programų kūrime.}
+\subsection{TMMi ir Agile}
 \subsection{Poskyris}
 
 \sectionnonum{Rezultatai ir išvados}
@@ -136,12 +180,12 @@ santrumpos.
 % kompaktiniame diske. Priedai taip pat numeruojami ir vadinami. Darbo tekstas
 % su priedais susiejamas nuorodomis.
 
-\section{Neuroninio tinklo struktūra}
+\section{TMMi modelio struktūra}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{img/MLP}
-    \caption{Paveikslėlio pavyzdys}
-    \label{img:mlp}
+    \includegraphics[scale=0.85]{img/TMMI}
+    \caption{TMMi modelio brandos lygiai \cite{Burnstein:2010:PST:1965566}}
+    \label{img:tmmi}
 \end{figure}
 
 
