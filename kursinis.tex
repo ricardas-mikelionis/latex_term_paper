@@ -40,11 +40,21 @@
 \pagenumbering{arabic}
 
 \sectionnonum{Įvadas}
-Nuo 2007, kai buvo pristatytas pirmasis iPhone jau praėjo kiek daugiau nei dešimt metų. Šio mobiliojo įrenginio, išmaniojo telefono (angl. Smartphone), pristatymas sukrėtė ir iš esmės pakeitė mobiliųjų kompiuterių rinką. Iki tol asmeniniai skaitmeniai asistentai (angl. PDA personal digital asistant) buvo nei prieinami, nei labai naudingi įprastam vartotojui, todėl juos turėjo keletas verslo pasaulio žmonių, o paprastas vartotojas su savimi nešiojosi krūvą skirtingą funkcionalumą atliekančių prietaisų: MP3 grotuvų, Fotoaparatų, nešiojamųjų kompiuterių, telefonų. iPhone žadėjo delne telpantį kompiuterį kiekvienam už prieinamą kainą, ir savo pažadą įvykdė. Vienas po kito ėmė rastis  mobiliosios operacinės sistemos, turėjusios tiesiogiai konkuruoti su iPhone naudojama iOS,  kaip PalmOS, Symbian, Windows 7 mobile, vėliau tapusi 8 ir 8.1 bei Android. Mobiliųjų kompiuterių bei telefonų rinką apėmė ir užplūdo krūvos prieinamų įrenginių, kurie su kiekviena nauja laida savo skaičiavimo sugebėjimais artėja arčiau ir arčiau to ką gali atlikti staliniai kompiuteriai, ir iš pažiūros 2017 metų išmanusis įrenginys savo specifikacijomis „ant popieriaus“ jau seniai pranoko 2007 metų kompiuterį.
+Nuo 2007, kai buvo pristatytas pirmasis iPhone jau praėjo kiek daugiau nei dešimt metų. Šio mobiliojo įrenginio, išmaniojo telefono (angl. Smartphone), pristatymas  iš esmės pakeitė mobiliųjų kompiuterių rinką. Iki tol asmeniniai skaitmeniai asistentai (angl. PDA personal digital asistant) buvo nei prieinami, nei labai naudingi įprastam vartotojui, todėl juos turėjo keletas verslo pasaulio žmonių, o paprastas vartotojas su savimi nešiojosi krūvą skirtingą funkcionalumą atliekančių prietaisų: MP3 grotuvų, Fotoaparatų, nešiojamųjų kompiuterių, telefonų. iPhone žadėjo delne telpantį kompiuterį kiekvienam už prieinamą kainą, ir savo pažadą įvykdė. Vienas po kito ėmė rastis  mobiliosios operacinės sistemos, turėjusios tiesiogiai konkuruoti su iPhone naudojama iOS,  kaip PalmOS, Symbian, Windows 7 mobile, vėliau tapusi 8 ir 8.1 bei Android. Mobiliųjų kompiuterių bei telefonų rinką užplūdo krūvos prieinamų įrenginių, kurie su kiekviena nauja laida savo skaičiavimo sugebėjimais artėja arčiau ir arčiau to ką gali atlikti staliniai kompiuteriai, ir iš pažiūros 2017 metų išmanusis įrenginys savo specifikacijomis „ant popieriaus“ jau seniai pranoko 2007 metų kompiuterį.
 
 Nors šiandien iš gausaus operacinių sistemų pasirinkimo rinkoje iš esmės išlikę tik dvi: iOS ir Android, tačiau  išmaniųjų prietaisų populiarumas toli gražu neblėsta. 2016 metais pasaulyje jau buvo apie 2.1 mlrd. išmaniųjų telefonų naudotojų, o iki 2020 planuojama, jog šis skaičius sieks 2.87 mlrd.\cite {statista.com}. Esant didžulei įrenginių paklausai proporcingai kyla poreikis ir programinei įrangai pritaikytai šiems įrenginiams - mobiliosioms programoms.
 
 Šio darbu siekiama pateikti esminius skirtumus tarp įprastų darbastalio (angl. desktop) bei internetinių (angl. Web) programų ir mobiliųjų programų skirtų išmaniesiems įrenginiams kokybės užtikrinimo. Šio darbo tikslas - išanalizavus dabartinės rinkos mobiliųjų programų kūrimo procesų tendencijas, išskirti problemines mobiliųjų programų kokybės užtikrinimo sritis bei pateikti keletą probleminių sričių kokybės užtikrinimo sprendimų remiantis testų brandos modeliu.
+
+Siekiant sėkmingai įgyvendinti užsibrėžtą dabo tikslą darbo metu bus:
+\begin{itemize}
+   \item Atliekama mobiliųjų įrenginių sampratos analizė, siekiant išsiaiškinti esminius skirtumus, kurie gali daryti įtaką mobiliųjų programų veikimui;
+   \item Remiantis mobiliųjų įrenginių sampratos analize išrenkamos pagrindinės probleminės sritys mobiliųjų programų testavime;
+   \item Atliekama integruotojo testų brandos modelio - TMMi detali analizė;
+   \item Remiantis mobiliųjų programų testavimo probleminėmis sritimis bei TMMi analizės rezultatais pateikiamas TMMi paremtas modelis skirtas padengti visas problemines sritis;
+   \item Atliekama agiliųjų metodikų naudojimo mobiliųjų programų kūrime apžvalga;
+   \item Remiantis agiliųjų metodikų iteratyvumu pateikiamas TMMi modelis pritaikytas komandoms dirbančioms pagal agiliasias metodikas.
+\end{itemize}
 
 
 
@@ -55,9 +65,15 @@ Nors šiandien iš gausaus operacinių sistemų pasirinkimo rinkoje iš esmės i
 Į mobiliųjų programų kūrimą vis dar žiūrima taip pat, kaip į interneto programų (angl. WEB application) ar darbastalio programų kūrimą, neįžvelgiant esminių skirtumų tarp šių dviejų programinės įrangos kūrimo procesų. Didžiulė įrenginių variacijų gausa, ir iš esmės išsiskiriantys naudojimosi mobiliąja programine įranga įpročiai turėtų versti kūrėjus į mobiliųjų programų kūrimą žvelgti kitaip.
 
 \subsection{Mobiliųjų programų kūrimo proceso probleminės sritys.}
-M. Satyanarayanan dar 1996-aisiais savo straipsnyje apie mobiliuosius kompiuterius puikiai aibrėžė esmines sritis, kurios išskiria mobiliuosius įrenginius nuo stacionariųjų. Išskirtos keturios sritys: riboti skaičiavimo ištekliai (angl. limited computing resources), apsauga ir pažeidžiamumas, galia (angl. performance) ir patikimumas bei riboti energijos ištekliai. \cite{Satyanarayanan:1996:FCM:248052.248053}
+M. Satyanarayanan dar 1996-aisiais savo straipsnyje apie mobiliuosius kompiuterius puikiai aibrėžė esmines sritis, kurios išskiria mobiliuosius įrenginius nuo stacionariųjų. Išskirtos keturios sritys \cite{Satyanarayanan:1996:FCM:248052.248053}:
+\begin{itemize}
+   \item Riboti skaičiavimo ištekliai (angl. limited computing resources)
+   \item Apsauga ir pažeidžiamumas
+   \item Galia (angl. performance) ir patikimumas
+   \item Riboti energijos ištekliai.
+\end{itemize}
 
-Iš esmės mobiliosios programos yra tokia programinė įranga, kuri veikia nešiojamame (mobiliame) įrenginyje. Tačiau į mobiliąją kompiuteriją žvelgiant per išmaniųjų telefonų prizmę mobiliųjų programų apibrėžimą galime sukonkretinti. Mobilioji programa (angl. mobile app) - programa suprojektuota veikti išmaniąjame telefone, planšetiniame kompiuteryje ar kitame mobiliame įrenginyje ir/arba, kaip įvestį, priimanti situacija paremtą (angl. context based) informaciją pvz. GPS signalas. \cite{6496451} Situacijos supratimas, naujimasis situacine informacija ir gabėjimas keisti savo veikimą yra dar vienas esminis mobiliųjų programų, ypač skirtų išmaniesiems telefonams, skiriamasis bruožas.
+Iš esmės mobiliosios programos yra tokia programinė įranga, kuri veikia nešiojamame (mobiliame) įrenginyje. Tačiau į mobiliąją kompiuteriją žvelgiant per išmaniųjų telefonų prizmę mobiliųjų programų apibrėžimą galime sukonkretinti. Mobilioji programa (angl. mobile app) - programa suprojektuota veikti išmaniąjame telefone, planšetiniame kompiuteryje ar kitame mobiliame įrenginyje ir/arba, kaip įvestį, priimanti situacija paremtą (angl. context based) informaciją pvz. GPS signalas. \cite{6496451} Situacijos supratimas, naudojimasis situacine informacija ir gabėjimas keisti programos elgseną pagal gautus duomenis yra dar vienas esminis mobiliųjų programų, ypač skirtų išmaniesiems telefonams, skiriamasis bruožas.
 
 Remiantis šiais keturiais techniniais išskirtinumo bruožais, ir esminiu veikimo skirtumu galima pradėti išskirti problemines kokybės užtikrinimo sritis mobiliųjų programų kūrime. Laikant progamas išmaniesiems telefonams tyrimo baziniu objektu išskiriamos šios sritys:
 \begin{itemize}
@@ -71,7 +87,7 @@ Remiantis šiais keturiais techniniais išskirtinumo bruožais, ir esminiu veiki
 \end{itemize}
 
 \subsubsection{Ryšio sujungiamumo probleminė sritis}
-Sugebėjimas prisijungti prie mobiliojo ryšio stočių bei bevielio interneto taškų dažnai mobiliajai programai yra kritinis reikalavimas, be kurio ši nesugebės funcionuoti. Problema kyla dėl ryšio nepastovumo keliaujant. Keliaujant didelius atstumus vyksta persijungimai tarp mobilaus ryšio stotelių, vartotojas gali pakliūti į neryšio zoną, ar vietą kurioje veikia viso labo GPRS ar EDGE ryšys. Taip pat ir su bevielio interneto stotelėsmis, kurių dažna veikia vos 100m. spinduliu nesant jokiems trukdžiams. 
+Sugebėjimas prisijungti prie mobiliojo ryšio stočių bei bevielio interneto taškų dažnai mobiliajai programai yra kritinis reikalavimas be kurio ši nesugebės funkcionuoti. Problema kyla dėl ryšio nepastovumo keliaujant. Keliaujant didelius atstumus vyksta persijungimai tarp mobilaus ryšio stotelių, vartotojas gali pakliūti į neryšio zoną, ar vietą kurioje veikia viso labo GPRS ar EDGE ryšys. Taip pat ir su bevielio interneto stotelėsmis, kurių dažna veikia vos 100m. spinduliu nesant jokiems trukdžiams. 
 
 Testuojant šioje srityje derėtų atsižvelgti į jau egzistuojančius ryšio defektus esančius specifiniame testavimui naudojamame įrenginyje, ar operacinėje sistemoje. \cite{android_bugs} Testuojant programas kurios smarkiai remiasi į įrenginio sugebėjimą prisijungti prie interneto ar mobiliojo ryšio tinklų atsiranda poreikis atlikti funkcinius testus įvairuose ryšio sujungiamumo scenarijuose. Pagrindinis siekis yra užtikrinti teisingą programos veikimą, net dingus ryšiui ar šiam staiga smarkiai sulėtėjus.
 
@@ -95,13 +111,15 @@ Rinkoje, vartotojams prieinami šimtai skirtingų mobiliųjų įrenginių iš sk
 
 Testuojant šioje srityje reikia stengtis maksimizuoti testų padengtumą minimizuojant naudojamų įrenginių kiekį. Tą galima daryti grupuojant įrenginius, ir testuojant ne konkrečiuose įrenginiuose (mažiau įrenginių) tačiau grupėse. Pavyzdžiui:
 
-Pirmoji grupė, žemiausio prioriteto testai, silpni, palyginus su dabartiniais pagrindinių gamintojų flagmanais, turintys silpnesnius procesorius, mažiau atminties, žemesnės raiškos ekranus. Paremti senesne operacinės sistemos versija, veikiantys su senesne naršykle. Dar vis populiarūs, tačiau gamintojo jau nebepalaikomi įrenginiai.
+\begin{itemize}
+   \item Pirmoji grupė, žemiausio prioriteto testai, silpni, palyginus su dabartiniais pagrindinių gamintojų flagmanais, turintys silpnesnius procesorius, mažiau atminties, žemesnės raiškos ekranus. Paremti senesne operacinės sistemos versija, veikiantys su senesne naršykle. Dar vis populiarūs, tačiau gamintojo jau nebepalaikomi įrenginiai.
 
-Antroji grupė, vidutinio prioriteto testai, vidutinio galingumo įrenginiai, dažniausiai kelių iteracijų, palyginius su dabartiniais pagrindinių išmaniųjų įrenginių gamintojų flagmanais, senumo pvz: iPhone 5s palyginus su iPhone 7. Jau gan seni, 3-2 metai, tačiau dar vis gamintojo palaikomi įrenginiai.
+   \item Antroji grupė, vidutinio prioriteto testai, vidutinio galingumo įrenginiai, dažniausiai kelių iteracijų, palyginius su dabartiniais pagrindinių išmaniųjų įrenginių gamintojų flagmanais, senumo pvz: iPhone 5s palyginus su iPhone 7. Jau gan seni, 3-2 metai, tačiau dar vis gamintojo palaikomi įrenginiai.
 
-Trečioji grupė, patys naujausi <1 metų senumo įrenginiai. Paremti naujausia operacinės sistemos versija, naujausios kartos komponentais, turintys daugiau atminties, aukštesnės raiškos ekranus, nei praeitos iteracijos modeliai.\cite{6496451}
+   \item Trečioji grupė, patys naujausi <1 metų senumo įrenginiai. Paremti naujausia operacinės sistemos versija, naujausios kartos komponentais, turintys daugiau atminties, aukštesnės raiškos ekranus, nei praeitos iteracijos modeliai.\cite{6496451}
+\end{itemize}
 
-Testuojant pasirinkta įrenginių kombinacija įgalina keletą pasirinkimų, kaip tokį testavimą galima vykdyti: rankinis testavimas arba automatinis testavimas, komandos įmonėje arba žmonės pasamdyti iš kitų įmonių, testavimas pagal planą arba tiriamasis testavimas (angl. exploratory testing) bei emuliatorių, virtualių mašinų naudojimas arba testavimas ant realių, fizinių įrenginių
+Testuojant pasirinkta įrenginių kombinacija įgalina keletą pasirinkimų, kaip tokį testavimą galima vykdyti: naudoti rankinį testavimą ar automatinį testavimą, testavimui pasitelkti komandas įmonėje ar žmones pasamdytus iš kitų įmonių, testuoti pagal planą ar naudoti tiriamąjį testavimą (angl. exploratory testing) bei naudoti emuliatorius, virtualias mašinas ar testuoti ant realių, fizinių įrenginių.
 
 \subsubsection{Naujų operacinių sistemų probleminė sritis}
 Mobiliosios operacinės sistemos, palyginus su operacinėmis sistemomis stacionariesiems kompiuteriams, yra išleidžiamos labai dažnai. Pastaruoju metu tiek iOS tiek Android nauja „numeruotoji“ versija yra išleidžiama kas met. Taip dažnai išleidžiant naują operacinės sistemos iteraciją gali kilti daugybė nesuderinamumo defektų, turint omenyje tai, kad ne visos versijos yra palaikomos, t.y. naujesnės programų versijos gali veikti tik su keliomis paskutinėmis operacinės sistemos iteracijomis.
@@ -136,30 +154,112 @@ Testų brandos modelį apibrėžia penki brandos lygiai\cite{Burnstein:2010:PST:
    \item Valdymo bei vertinimo (angl. Management and Measurement)
    \item Optimizacijos arba Defektų prevencijos bei kokybės valdymo (angl. Optimisation/Defect Prevention and Quality Control)
 \end{enumerate}
-Kiekvienas iš šių lygių turi ir vidinę struktūra pavaizduota priede nr. 1. Pirmasis brandos lygis savo struktūros neturi, nes tiesiog nurodo bazinio proceso egzistavimą, o jo pasiekimui užtenka chaotiško proceso. Kiekvieno brandos lygio brandos tikslai atspingi testavimo proceso pagerinimo tikslus kuriuos reikia įvykdyti norint pasiekti norimą brandos lygį. Taip pat norint pasiekti aukštesnį lygį būtina įgyvendinti ir visus tikslus reikalingus pasiekti žemesnius lygius tam, kad nevyktų regresija ir tikrai būtų pasiektas testavimo proceso pagerinimas.
+Kiekvienas iš šių lygių turi ir vidinę struktūrą Priedas nr. 1. Pirmasis brandos lygis savo struktūros neturi, nes tiesiog nurodo bazinio proceso egzistavimą, o jo pasiekimui užtenka chaotiško proceso. Kiekvieno brandos lygio brandos tikslai atspindi testavimo proceso pagerinimo tikslus, kuriuos reikia įvykdyti norint pasiekti norimą brandos lygį. Taip pat norint pasiekti aukštesnį lygį būtina įgyvendinti ir visus tikslus reikalingus pasiekti žemesnius lygius tam, kad nevyktų proceso brandos regresija ir tikrai būtų pasiektas testavimo proceso pagerinimas.\cite{Tmmi}
 
 \subsubsubsection{Pirmasis brandos lygis}
+Šiame brandos lygyje operuoja visos programinės įrangos kūrėjų komandos, kurios turi bet kokį testavimo procesą. Pasiekti šį lygį užtenka chaotiško, neefektyvaus, tačiau vykdomo testavimo proceso. Šiame lygyje testai dažniausiai būna pritaikyti konkrečiai situacijai, nėra kartotini. Testavimo procesas iš esmės neturi kokybės standarto.
 
 \subsubsubsection{Antrasis brandos lygis}
+Šiame brandos lygyje iš chaotiško proceso imamas apibrėžti konkretus testavimo metodas, bei testavimo procesas imamas valdyti. Imami apibrėžti testavimo scenarijai, kuriami testavimo planai, dažniausiai iš reikalavimų yra keliami testavimo atvejai. TMM bei TMMi paremti krioklio (angl. waterfall) metodologija, todėl testavimas dažniausiai atliekamas kūrimo proceso gale, lyginant turimą produktą, su kūrimo pradžioje apibrėžtais reikalavimais. Pasiekę šį lygį dar, savaime aišku, neturime visiškai efektyvaus testavimo proceso, tačiau turime konkrečiai apibrėžtą testavimo proceso kryptį, kurią bus galima toliau plėtoti siekiant aukštesnio testavimo proceso brandos lygmens.
 
 \subsubsubsection{Trečiasis brandos lygis}
+Šiame brandos lygyje apibrėžiamas standartizuotas procesas bei procedūros, kurios bus naudojamos, visoje organizacijoje, komandoje, kurios testavimo procesą stengiamasi pagerinti. Pasiekus antrąjį brandos lygį testavimo procesas yra struktūrizuotas čia jis imamas integruoti į programinės įrangos kūrimo gyvavimo ciklą (angl. Developement life cycle). Pasiekus trečiąjį testavimo proceso bandos lygį, antrąjame apibrėžtas procesas bus integruotas ir pradėtas naudoti visuose naujuose projektuose nuo pat projekto pradžios. Šiame lygyje dar dažnai planuojamas bei vykdomas nefunkcinis testavimas kiekviename projekte įtrauktame į testavimo procesą.
 
 \subsubsubsection{Ketvirtasis brandos lygis}
+Pasiekus šį brandos lygmenį, visų kūrimo veiklų bei rezultatų detalus vertinimas. Procesų vertinimas turėtų būti pradėtas vykdyti nuo pačios anksčiausios kiekvieno projekto stadijos. Taip siekiama kiekvieną projektą įgyvendinti su kuo įmanoma mažiau defektų. Šiame lygyje vykdomos išsamios projekto apžvalgos, bei ankstyvose projektų stadijose vykdomas statinis testavimas derinamas su dinaminėmis testavimo technikomis apibrėžtomis antrąjame testų proceso brandos lygyje. Pasiekus šį brandos lygį testavimo procesas vykdomas visuose programinės įrangos kūrimo gyvavimo ciklo etapuose, taip pat įtraukiant produktų dokumentacijos peržiūrą Priedas nr. 2. Pakankamos kokybės kriterijai apibrėžiami visiems produktams toje organizacijoje.
 
 \subsubsubsection{Penktasis brandos lygis}
+Šiame brandos lygyje visos testavimo veiklos bei rezultatai yra vertinami siekiant juos optimizuoti. Tai daroma norint nuolatos tobulinti testavimo procesą siekiant visiškos defektų prevencijos, o ne defektų taisymo.
 
-\subsubsection{Testų Brandos Modelis TMMi bei Gebėjimo Brandos Modelis CMMi}
+\subsubsection{Testų Brandos Modelis TMM bei Gebėjimo Brandos Modelis CMM}
+Gebėjimo brandos modelis iš pradžių buvo sudarytas, kaip įrankis objektyviai bei tiksliai įvertinti valstybinių projektų vykdytojų darbo procesų kokybę įgyvendinant užsakytą programinės įrangos projektą. Šis modelis smarkiai paremtas procesų brandos modeliu pirmą kartą aprašytu W.Humphrey knygoje „Managing the software Process“. \cite{Paulk:1993:CMM:624600.625307}
 
+TMM modelio struktūra yra paremta tuo kas buvo sukurta CMM modeliui, todėl abiejuose modeliuose randamos tokios pat esminės sudedamosios dalys, kaip pavyzdžiui brandos lygiai su panašiais, o kai kur ir identiškais tikslais tam lygiui pasiekti. Pažvelgus į CMM modelį kyla klausimas ar juo vertėtų naudotis šiandien, gerinant testavimo procesų kokybę nuosavame projekte? CMM ir kiti panašūs modeliai (ISO 9001, BOOT-STRAP, SPICE) tinkamai neatsižvelgia į testavimo keliamas problemas, todėl nėra tinkami konkrečių testavimo procesų gerinimui, tačiau verta pažvelgti giliau į tai, kaip CMM modelis buvo pakeistas kuriant TMM modelį.
+
+Pagrindiniai CMM bei TMM skirtumai:
+\begin{itemize}
+   \item Gebėjimo brandos modelyje testavimo proceso branda nėra apibrėžta.
+   \item Pagrindinės testavimo probleminės sritys nėra apibrėžtos esminiuose procesuose.
+   \item Nedaug dėmesio skiriama aukštos kokybės testavimui, kaip procesų bei produktų gerinimo strategijai.
+   \item Nepilnai apibrėžiami, ne daug minimos su kokybe susijusios problemos kaip testuojamumas, testų pakankamumo kriterijai, testavimo planavimas bei programinės įrangos sertifikavimas.
+   \item Pažangesni testavimo procesai, kaip vartojimo statistikos surinkimas, statistinis testavimas bei kiekybinė testavimo proceso kontrolė yra nepakankamai aprašyti.
+\end{itemize}
+Šiandien testavimas programinės įrangos kūrimo procesuose atlieka labai svarbų vaidmenį, todėl jam teikiamas toks pat, jeigu ne didesnis dėmesys, kaip programinės įrangos kūrimui. Turint tai omenyje, CMM bei jo įpėdinis CMMi tampa nepriimtini dėl dėmesio testavimo procesų gerinimui stokos.
+
+\subsection{Probleminių sričių pasiskirstymas TMMi modelyje.}
+TMMi savo lygmenimis išskirsto ir funkcinį bei nefunkcinį testavimą, pvz. Antrąjame lygyje užtenka sutvarkyti funkcinio testavimo procesus, o trečiojo lygio nebus galima pasiekti neįgyvendinus nefunkcinio testavimo proceso tvarkos. Auščiau išskirtas mobiliųjų programų testavimo problemines sritis taip pat paprastai galima išskirstyti į funkcinio testavimo bei nefunkcinio testavimo rūšis:
+\begin{itemize}
+   \item Funkciniai testai: Draugiškumo vartotojui probleminė sritis, Situacinio prisitaikymo probleminė sritis bei Įrenginių gausos probleminė sritis.
+   \item Nefunkciniai testai: Ribotų išteklių probleminė sritis, Ryšio sujungiamumo probleminė sritis.
+\end{itemize}
+Kadangi probleminių sričių testavimas lengvai išskirstomas į funkcinį bei nefunkcinį, jam galima nesunkiai pritaikyti testų brandos modelį. Taip ne tik pasiekiant pilną probleminių sričių padengtumą testais, tačiau ir bendro testavimo proceso pagerinimą.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.85]{img/Tmmimobile}
+    \caption{Mobiliojo testavimo probleminės sritys sudėtos į TMMi brandos modelį.}
+    \label{img:tmmimobile}
+\end{figure}
 
 \section{Agile metodologijos mobiliųjų programų kūrime.}
+Agilieji kūrimo metodai (angl. agile) tai lanksčios programinės įrangos kūrimo metodikos. Tokiose metodikose viskas kūrimo procesas yra suskaldomas į eilę ciklų, dar vadinamų iteracijomis. Dažnai, kuriant mobiliasias programas remiantis agiliaisiais metodais, visos užduotys padalijamos į keletą mažesnių, skirtų įvykdyti didesniąjai, kurių kiekviena tampa kone savo atskiru mikroprojektu iš kurio pro iteracijos komanda gauna veikiančio produkto dalį.
+
+Iteracinis išskirstymas leidžia projektą tvarkingai išskirstyti logiškai, viena po kitos einančiomis dalimis, taip pat išskirstant komandos resursus atitinkamai dirbti mažesnėse komandose, taip sumažinant kūrimo rizikas, tokias, kaip defektai.
+
 \subsection{TMMi ir Agile}
-\subsection{Poskyris}
+Testų brandos modelis bei agiliosios kūrimo metodologijos, dvi praktikos, kurios skiekia to paties, tačiau iš pirmo žvilgsnio nėra suderinamos. TMMi, kaip ir daugelis kitų brandos modelių, yra paremtas V modeliu Priedas nr. 2, tai tokia programinės įrangos kūrimo metodologija, kai  visi planavimo, kūrimo bei testavimo procesai yra vykdomi atskirai vienas nuo kito, paeiliui, o kūrimo metu tik planuojant testavimą. Kol tuo tarpu agiliųjų metodologijų manifeste teigiama, jog žmonės ir bendravimas vertinamas labiau, nei procesai ar įrankiai, veikianti programinė įranga vertinama labiau, nei išsami dokumentacija, bendradarbiavimas su klientu vertinamas labiau, nei derybos dėl kontraktų ir reagavimas į pokyčius vertinamas labiau, nei plano įvykdyamas \cite{agile}. Iš pirmo žvilgsio abi metodologijos atrodo visiškomis priešingybėmis. Ar galime daryti išvadą, jog agiliųjų metodologijų testavimo procesas pasmerktas ir nepagerinamas?
+
+Kuriant programinę įrangą agiliosiomis metodologijomis, nėra rašoma palti dokumentacija, tačiau kiekvienos iteracijos pradžioje imama dalis reikalavimų, užduočių, ir detaliai išnagrinėjiama įvertinama valandų kiekiu, ar pagal sudėtingumą, o kiekvienos iteracijos pabaigoje vyksta apžvalga, aptarimas skirtas pagerinti procesus kitai iteracijai bei apptarti, kas buvo nuveikta šią iteraciją.
+
+Naudojantis agiliosiomis metodologijomis nėra kuriamas detalus testavimo planas visam projektui, komanda pati neapibrėžia kokybės reikalavimų kiekvienai užduočiai. Testai kuriami universalūs, pritaikomi kiekvienai iteracijai, papildomi naujo funkcionalumo testais atitinkamai nuo to, kas yra atlikta, ar planuojama atlikti. Kokybiniai reikalavimai kinta, tačiau yra lengvai nustatomi glaudžiai bendradarbiaujant su projekto užsakovu, ką agiliosios metodologijos ir skatina.
+
+Žvelgiant į kiekvieną agiliąją iteraciją, kaip atskirą projektą, jai galima pritaikyti V-modelį, o tuo labiau TMMi testų brandos modelį. Remiantis išskirtais TMMi lygiais, aglijiuoju manifestu bei tokio kūrimo procesu agilųjį testavimo procesą TMMi modelyje butų galima išdėstyti taip:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.85]{img/Tmmagile}
+    \caption{Agile metodologijos įpatumai sudėti į TMMi brandos modelį.}
+    \label{img:tmmiagile}
+\end{figure}
 
 \sectionnonum{Rezultatai ir išvados}
-Rezultatų ir išvadų dalyje turi būti aiškiai išdėstomi pagrindiniai darbo
-rezultatai (kažkas išanalizuota, kažkas sukurta, kažkas įdiegta) ir pateikiamos
-išvados (daromi nagrinėtų problemų sprendimo metodų palyginimai, teikiamos
-rekomendacijos, akcentuojamos naujovės).
+Šiame darbe buvo išnagrinėtas programinės įrangos kūrimas remiantis mobiliojo įrenginio apibrėžimu, taip išskiriant esminius skirtumus tarp programinės įrangos kūrimo mobiliesiems įrenginiams bei programų kūrimo stacionariems kompiuteriams, interneto programų kūrimo.
+
+Atliekant tyrimą pastebėta, jog informaciją apie mobiliųjų programų kūrimą visada pateikiama per agiliųjų metodologijų prizmę, tačiau testų procesų gerinimo metodai, testų brandos modeliai, yra paremti V-modelio programinės įrangos kūrimo metodologijomis. Buvo pasirinkta strategija išskirti problemines mobiliųjų programų testavimo sritis, tuomet jas pritaikyti TMMi modeliui priskiriant atitikamam brandos lygmeniui. Ta pati strategija buvo taikoma atskirai nagrinėjant agiliasias metodologijas, siekiant rasti sprendimą, kai V-modeliu paremtas testų brandos modelis galėtų būti pritaikomas su agiliosiomis praktikomis.
+
+ Šiame darbe didžiausias demesys buvo skirtas mobiliųjų programų, skirtų išmaniesiems įrenginiams tokiems, kaip išmanieji telefonai, planšetiniai kompiuteriai, kūrimo procesui. Priežasčių, kodėl tokių programų kūrimo procesas daugelyje komandų būna neefektyvus, tyrimui. Išsiaiškinus šias priežastis, buvo siekta ieškoti sprendimų, pritaikant jau atliktus konkrečius tyrimus nagrinėjančius mobiliuosius įrenginius, mobiliųjų programų kūrimą bei testų brandos modelio taikymą, taip apjungiant naudingas tyrimų rezultatų dalis į vieną, procesą gerinantį, sprendimą.
+
+Iš pradžių buvo apibrėžta konkreti mobiliojo įrenginio sąvoka, taip išskiriant keletą esminių išskirtinumo sričių, kuriomis nereikia rūpintis kuriant programinę įrangą staliniams kompiuteriams \cite{Satyanarayanan:1996:FCM:248052.248053}:
+\begin{itemize}
+   \item Riboti skaičiavimo ištekliai (angl. limited computing resources)
+   \item Apsauga ir pažeidžiamumas
+   \item Galia (angl. performance) ir patikimumas
+   \item Riboti energijos ištekliai.
+\end{itemize}
+Remiantis šiais išskirtinumo bruožais, bei keletu tyrimų apie mobiliųjų programų kūrimą \cite{Muccini:2012:STM:2663608.2663615, 6496451} buvo išskritos esminės probleminės mobiliųjų programų testavimo sritys į kurias reikėtų kreipti daugiausiai dėmesio norint programinės įrangos kūrimo porceso pabaigoje turėti kokybišką produktą:
+\begin{itemize}
+  \item Ryšio sujungiamumo probleminė sritis;
+  \item Ribotų išteklių probleminė sritis;
+  \item Draugiškumo vartotojui probleminė sritis;
+  \item Situacinio prisitaikymo probleminė sritis;
+  \item Įrenginių gausos probleminė sritis;
+  \item Naujų operacinių sistemų versijų probleminė sritis;
+  \item Liečiamųjų ekranų probleminė sritis;
+\end{itemize}
+Kiekvienai šių sričių išskirti pagrindiniai testavimo objektai bei iššūkiai galintys kilti testavimo metu.
+
+Toliau, darbe nagrinėjama konkretus testavimpo proceso gerinimo sprendimas - TMMi, testų brandos integracinis modelis. Buvo plačiau išnagrinėtas kiekvienas iš modelyje apibrėžtų lygių, taip siekiant atrasti sąsają, tarp mobiliųjų programų kūrimo probleminių sričių, bei testavimo proceso struktūrizavimo metodų. Taip pat išnagrinėjamas CMM - gebėjimo brandos modelis, kuris buvo sukurtas dar prieš TMM, tačiau išsiaiškinta, jog CMM didelio dėmesio testavimui neskiria, todėl jis toliau darbe nenagrinėtas. Pateiktas TMMi paremtas modelis skirtas mobiliųjų programų probleminių sričių testavimui.
+
+Kuriant TMMi paremtą modelį probleminėms sritims iškilo dar viena problema - metodologijų nesuderinamumas. Daugelis mobiliųjų programų yra kuriamos agiliosiomis metodologijomis paremtu kūrimo procesu, kuriame daug dėmesio nekreipiama į dokumentavima. TMMi glaudžiai paremtas V-modeliu, kuriame programų kūrimas vyksta ne iteracijomis tačiau etapais, nuo planavimo iki sistemos testavimo, kiekviename etape iki testavimo pradžios daug dokumentuojant, taip sudarant pagrindą daugeliui testų. Buvo priimtas sprendimas vieną agiliąją programos kūrimo iteraciją laikyti atskiru projektu, paremtu V-modeliu. Ir kiekvienai agiliajai iteracijai būdingus bruožus pritaikyti jų V-modelio atitikmenims. Taip gaunant iteracinį testų brandos modelį, kuris testavimo procesą gerina kiekvienai iteracijai atskirai, bei visam projektui po kiekvienos iteracijos.
+
+Išskirti du esminiai testavimo procesui gerinti skirti modeliai: vienas modelis konkrečioms probleminėms sritims, kitas, agiliojo proceso adaptacija į testų brandos modelį. Kadangi abu modeliai yra paremti TMMi juos galima vykdyti kartu, kiekvienoje agiliojoje iteracijoje tiesiog įtraukiant naująjį funkcionalumą suplanuotą tai iteracijai.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75, angle=90]{img/agilemobile}
+    \caption{Agile TMMi modelio, bei mobiliojo testavimo problemonių sričių TMMi modelio apjungimas.}
+    \label{img:agilemobile}
+\end{figure}
 
 \printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
 % literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
@@ -169,10 +269,9 @@ rekomendacijos, akcentuojamos naujovės).
 % šaltinių, kurie nebuvo paminėti tekste.
 
 % \sectionnonum{Sąvokų apibrėžimai}
-\sectionnonum{Santrumpos}
-Sąvokų apibrėžimai ir santrumpų sąrašas sudaromas tada, kai darbo tekste
-vartojami specialūs paaiškinimo reikalaujantys terminai ir rečiau sutinkamos
-santrumpos.
+\sectionnonum{Žodynas}
+Statinis testavimas - 
+
 
 \appendix  % Priedai
 % Prieduose gali būti pateikiama pagalbinė, ypač darbo autoriaus savarankiškai
@@ -188,20 +287,12 @@ santrumpos.
     \label{img:tmmi}
 \end{figure}
 
-
-\section{Eksperimentinio palyginimo rezultatai}
-% tablesgenerator.com - converts calculators (e.g. excel) tables to LaTeX
-\begin{table}[H]\footnotesize
-  \centering
-  \caption{Lentelės pavyzdys}
-  {\begin{tabular}{|l|c|c|} \hline
-    Algoritmas & $\bar{x}$ & $\sigma^{2}$ \\
-    \hline
-    Algoritmas A  & 1.6335    & 0.5584       \\
-    Algoritmas B  & 1.7395    & 0.5647       \\
-    \hline
-  \end{tabular}}
-  \label{tab:table example}
-\end{table}
+\section{Programų sistemų kūrimo V-modeliu struktūra}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/Vmodel}
+    \caption{V-modelis \cite{Burnstein:2010:PST:1965566}}
+    \label{img:vmodel}
+\end{figure}
 
 \end{document}
